@@ -1,0 +1,18 @@
+.titulo {
+  margin-top: 50px;
+  text-align: center;
+}
+.mat-elevation-z8{
+  width: 100%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+i{
+  color: forestgreen;
+  font-size: 20px;
+}
+.mat-mdc-form-field {
+  font-size: 18px;
+  width: 100%;
+}
