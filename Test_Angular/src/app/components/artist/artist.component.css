@@ -2,17 +2,32 @@
   margin-top: 50px;
   text-align: center;
 }
-.mat-elevation-z8{
-  width: 100%;
+.mat-elevation-z8 {
+  width: 80%;
   margin: auto;
   margin-top: 30px;
 }
 
-i{
+i {
   color: forestgreen;
   font-size: 20px;
 }
 .mat-mdc-form-field {
   font-size: 18px;
   width: 100%;
+}
+.example-header-image {
+  background-size: cover;
+}
+button{
+  background-color: whitesmoke;
+}
+
+@media only screen and (max-width: 600px) {
+  .mat-elevation-z8 {
+    width: 100%;
+  }
+  .popularity {
+    display: none;
+  }
 }

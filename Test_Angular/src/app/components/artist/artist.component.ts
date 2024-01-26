@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class ArtistComponent implements AfterViewInit {
   artists: any = [];
-  displayedColumns: string[] = ['name', 'popularity', 'view'];
+  displayedColumns: string[] = ['image','name', 'popularity', 'view'];
   dataSource = new MatTableDataSource<Artists>(this.artists);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -37,6 +37,7 @@ export class ArtistComponent implements AfterViewInit {
 }
 
 export interface Artists {
+  image:[];
   name: string;
   id: number;
   popularity: number;
