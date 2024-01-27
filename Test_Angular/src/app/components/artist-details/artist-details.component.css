@@ -1,0 +1,42 @@
+.example-card {
+  width: 80%;
+  margin-bottom: 8px;
+  margin: auto;
+  height: auto;
+  background-color:#F6F6F6;
+}
+button{
+  margin-left: 0;
+  margin-right: 5px;
+  background-color: forestgreen;
+  padding: 10px;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+
+h2{
+  text-align: center;
+}
+.example-box{
+  background-color: forestgreen !important;
+  color: white !important;
+}
+.example-chip{
+  color: white !important;
+}
+.principal{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 15px;
+}
+.contenido{
+  width: 45%;
+}
+
+@media only screen and (max-width: 600px) {
+  .custom{
+    display: none;
+  }
+}

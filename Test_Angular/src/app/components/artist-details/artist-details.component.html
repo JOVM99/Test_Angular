@@ -1,1 +1,46 @@
-<p>artist-details works!</p>
+<app-loading *ngIf="loading"></app-loading>
+<mat-card class="example-card" *ngIf="!loading">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title
+        ><h2>{{ artist.name }}</h2></mat-card-title
+      >
+      <mat-card-title
+        ><button>
+          <a href="{{ artist.external_urls.spotify }}" target="_blank">
+            Ir a la página del Artista
+          </a>
+        </button></mat-card-title
+      >
+      <img mat-card-lg-image [src]="artist.images[0].url" />
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-chip-set class="example-chip">
+      <mat-chip class="example-box"
+        >Followers: {{ artist.followers.total | number }}</mat-chip
+      >
+    </mat-chip-set>
+    <mat-chip-set class="example-chip custom">
+      <mat-chip class="example-box">
+        Géneros: {{ artist.genres.join(", ") }}
+      </mat-chip>
+    </mat-chip-set>
+  </mat-card-content>
+</mat-card>
+<div class="principal">
+  <div class="contenido">
+    <h2>Álbumes</h2>
+    <hr />
+    <mat-selection-list *ngFor="let tracks of topTracks">
+      <mat-list-option color="primary">{{ tracks.album.name}}</mat-list-option>
+    </mat-selection-list>
+  </div>
+  <div class="contenido">
+    <h2>Top Tracks</h2>
+    <hr />
+    <mat-selection-list *ngFor="let track of topTracks">
+      <mat-list-option>{{ track.name }}</mat-list-option>
+    </mat-selection-list>
+  </div>
+</div>
