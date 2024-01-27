@@ -34,9 +34,36 @@ h2{
 .contenido{
   width: 45%;
 }
+.principal2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+  justify-content: center;
+  align-content: center;
+  margin-top: 50px;
+}
 
-@media only screen and (max-width: 600px) {
+.contenido2{
+  text-align: center;
+}
+
+body, .principal2 {
+  overflow-x: hidden;
+}
+
+@media only screen and (max-width: 900px) {
   .custom{
     display: none;
+  }
+  .contenido{
+    width: 50%;
+  }
+  .principal2 {
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (min-width: 900px) and (max-width: 1400px) {
+  .principal2 {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

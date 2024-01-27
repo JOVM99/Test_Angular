@@ -1,0 +1,25 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div
+      mat-card-avatar
+      class="example-header-image"
+      [style.background-image]="
+        'url(' + (items.album.images[2].url | noimage) + ')'
+      "
+    ></div>
+    <mat-card-title>{{ items.name }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="items.album.images[0].url | noimage" alt="Photo" />
+  <mat-card-content style="margin-top: 10px">
+    <mat-chip-set class="example-chip"> </mat-chip-set>
+    <iframe
+      class="musica"
+      [src]="items.uri|domSeguro"
+      width="400"
+      height="80"
+      frameborder="0"
+      allowtransparency="true"
+      allow="encrypted-media"
+    ></iframe>
+  </mat-card-content>
+</mat-card>

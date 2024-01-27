@@ -8,7 +8,7 @@
       <mat-card-title
         ><button>
           <a href="{{ artist.external_urls.spotify }}" target="_blank">
-            Ir a la página del Artista
+            Go to the Artist page
           </a>
         </button></mat-card-title
       >
@@ -23,24 +23,33 @@
     </mat-chip-set>
     <mat-chip-set class="example-chip custom">
       <mat-chip class="example-box">
-        Géneros: {{ artist.genres.join(", ") }}
+        Genders: {{ artist.genres.join(", ") }}
       </mat-chip>
     </mat-chip-set>
   </mat-card-content>
 </mat-card>
 <div class="principal">
   <div class="contenido">
-    <h2>Álbumes</h2>
+    <h2>Albums</h2>
     <hr />
-    <mat-selection-list *ngFor="let tracks of topTracks">
-      <mat-list-option color="primary">{{ tracks.album.name}}</mat-list-option>
+    <mat-selection-list [(ngModel)]="selectedAlbums" (ngModelChange)="onChanges()" >
+      <mat-list-option *ngFor="let album of albums" [value]="album" color="primary">{{ album.name }}</mat-list-option>
     </mat-selection-list>
   </div>
   <div class="contenido">
     <h2>Top Tracks</h2>
     <hr />
-    <mat-selection-list *ngFor="let track of topTracks">
-      <mat-list-option>{{ track.name }}</mat-list-option>
+    <mat-selection-list [(ngModel)]="selectedTracks" (ngModelChange)="onChanges2()" >
+      <mat-list-option *ngFor="let track of topTracks" [value]="track" >{{ track.name }}</mat-list-option>
     </mat-selection-list>
+  </div>
+</div>
+<hr />
+<div class="principal2">
+  <div class="contenido2" *ngFor="let selectedAlbum of selectedAlbums">
+    <app-card-item  [items]="selectedAlbum" ></app-card-item>
+  </div>
+  <div class="contenido2" *ngFor="let selectedTrack of selectedTracks">
+    <app-card-tracks [items]="selectedTrack"></app-card-tracks>
   </div>
 </div>

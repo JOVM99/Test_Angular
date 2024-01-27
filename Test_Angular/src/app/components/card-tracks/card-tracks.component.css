@@ -4,9 +4,12 @@
   width: 450px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   .example-card{
     width: 300px;
+  }
+  .musica{
+    width: 250px;
   }
 }
 @media only screen and (min-width: 900px) and (max-width: 1400px) {

@@ -62,4 +62,11 @@ export class SpotifyService {
       })
     );
   }
+  getAlbums(id: string) {
+    return this.getQuery(`artists/${id}/albums?limit=10`).pipe(
+      map((data: any) => {
+        return data.items;
+      })
+    );
+  }
 }

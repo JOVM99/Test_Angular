@@ -1,1 +1,17 @@
-<p>card-item works!</p>
+<mat-card class="example-card">
+  <mat-card-header>
+   <div mat-card-avatar class="example-header-image"  [style.background-image]="'url(' + (items.images[2].url | noimage) +')'"></div>
+    <mat-card-title>{{items.name}}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="items.images[0].url | noimage" alt="Photo">
+  <mat-card-content style="margin-top: 10px;">
+    <mat-chip-set class="example-chip">
+      <mat-chip class="example-box"
+        >Release Date: {{items.release_date | date}}</mat-chip
+      >
+      <mat-chip class="example-box"
+      >Artist: {{items.artists[0].name}}</mat-chip
+    >
+    </mat-chip-set>
+  </mat-card-content>
+</mat-card>

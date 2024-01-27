@@ -22,6 +22,8 @@ import { NoimagePipe } from './pipes/noimage.pipe';
 import { ArtistDetailsComponent } from './components/artist-details/artist-details.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { CardItemComponent } from './components/card-item/card-item.component';
+import { CardTracksComponent } from './components/card-tracks/card-tracks.component';
+import { DomSeguroPipe } from './pipes/dom-seguro.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { CardItemComponent } from './components/card-item/card-item.component';
     NoimagePipe,
     ArtistDetailsComponent,
     LoadingComponent,
-    CardItemComponent
+    CardItemComponent,
+    CardTracksComponent,
+    DomSeguroPipe
   ],
   imports: [
     BrowserModule,
