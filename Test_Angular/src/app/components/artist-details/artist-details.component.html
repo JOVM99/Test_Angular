@@ -1,23 +1,24 @@
 <app-loading *ngIf="loading"></app-loading>
 <mat-card class="example-card" *ngIf="!loading">
+  <!--Card para datos principales del artista seleccionado-->
   <mat-card-header>
     <mat-card-title-group>
       <mat-card-title
-        ><h2>{{ artist.name }}</h2></mat-card-title
-      >
-      <mat-card-title
-        ><button>
+        ><h2>{{ artist.name }}</h2>
+      </mat-card-title>
+      <mat-card-title>
+        <button class="link">
           <a href="{{ artist.external_urls.spotify }}" target="_blank">
             Go to the Artist page
           </a>
-        </button></mat-card-title
-      >
+        </button>
+      </mat-card-title>
       <img mat-card-lg-image [src]="artist.images[0].url" />
     </mat-card-title-group>
   </mat-card-header>
   <mat-card-content>
     <mat-chip-set class="example-chip">
-      <mat-chip class="example-box"
+      <mat-chip class="example-box" color="warn"
         >Followers: {{ artist.followers.total | number }}</mat-chip
       >
     </mat-chip-set>
@@ -26,28 +27,52 @@
         Genders: {{ artist.genres.join(", ") }}
       </mat-chip>
     </mat-chip-set>
+    <button
+      mat-raised-button
+      class="Add"
+      [routerLink]="['/addAlbum/', artist.id]"
+      color="primary"
+    >
+      Add Album
+    </button>
   </mat-card-content>
 </mat-card>
+<!--Listado de álbumes y Top tracks del artista-->
 <div class="principal">
   <div class="contenido">
     <h2>Albums</h2>
     <hr />
-    <mat-selection-list [(ngModel)]="selectedAlbums" (ngModelChange)="onChanges()" >
-      <mat-list-option *ngFor="let album of albums" [value]="album" color="primary">{{ album.name }}</mat-list-option>
+    <mat-selection-list
+      [(ngModel)]="selectedAlbums"
+      (ngModelChange)="onChanges()"
+    >
+      <mat-list-option
+        *ngFor="let album of albums"
+        [value]="album"
+        color="primary"
+        >{{ album.name }}</mat-list-option
+      >
     </mat-selection-list>
   </div>
   <div class="contenido">
     <h2>Top Tracks</h2>
     <hr />
-    <mat-selection-list [(ngModel)]="selectedTracks" (ngModelChange)="onChanges2()" >
-      <mat-list-option *ngFor="let track of topTracks" [value]="track" >{{ track.name }}</mat-list-option>
+    <mat-selection-list
+      [(ngModel)]="selectedTracks"
+      (ngModelChange)="onChanges2()"
+    >
+      <mat-list-option *ngFor="let track of topTracks" [value]="track">{{
+        track.name
+      }}</mat-list-option>
     </mat-selection-list>
   </div>
 </div>
+<!--Detalles del álbum o cáncion seleccionada-->
+<h1>Details Selected Items</h1>
 <hr />
 <div class="principal2">
   <div class="contenido2" *ngFor="let selectedAlbum of selectedAlbums">
-    <app-card-item  [items]="selectedAlbum" ></app-card-item>
+    <app-card-item [items]="selectedAlbum"></app-card-item>
   </div>
   <div class="contenido2" *ngFor="let selectedTrack of selectedTracks">
     <app-card-tracks [items]="selectedTrack"></app-card-tracks>

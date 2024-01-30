@@ -1,3 +1,4 @@
+//Componente para la Card de los álbumes
 import { Component, Input} from '@angular/core';
 
 @Component({

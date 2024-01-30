@@ -15,16 +15,17 @@ a{
   text-decoration: none;
   color: white;
 }
-
+h1{
+  text-align: center;
+  margin-top: 10px;
+}
 h2{
   text-align: center;
 }
-.example-box{
-  background-color: forestgreen !important;
-  color: white !important;
-}
-.example-chip{
-  color: white !important;
+.Add{
+  width: 140px;
+  height: 40px;
+  margin: 5px;
 }
 .principal{
   display: flex;
@@ -40,7 +41,8 @@ h2{
   grid-gap: 5px;
   justify-content: center;
   align-content: center;
-  margin-top: 50px;
+  margin-top: 10px;
+  margin-bottom: 100px;
 }
 
 .contenido2{
@@ -67,3 +69,4 @@ body, .principal2 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+

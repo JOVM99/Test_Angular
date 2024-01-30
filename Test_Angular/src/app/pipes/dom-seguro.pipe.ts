@@ -1,3 +1,4 @@
+//Pipe para validar que la url de la canción sea segura
 import { Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 

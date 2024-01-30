@@ -1,3 +1,4 @@
+//componente para la card de las canciones seleccionadas
 import { Component, Input} from '@angular/core';
 
 @Component({

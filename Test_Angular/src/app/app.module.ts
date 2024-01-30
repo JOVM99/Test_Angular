@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
 //Angular Material
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -13,6 +13,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatIconModule} from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { CardItemComponent } from './components/card-item/card-item.component';
 import { CardTracksComponent } from './components/card-tracks/card-tracks.component';
 import { DomSeguroPipe } from './pipes/dom-seguro.pipe';
+import { AddAlbumComponent } from './components/add-album/add-album.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { DomSeguroPipe } from './pipes/dom-seguro.pipe';
     LoadingComponent,
     CardItemComponent,
     CardTracksComponent,
-    DomSeguroPipe
+    DomSeguroPipe,
+    AddAlbumComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,9 @@ import { DomSeguroPipe } from './pipes/dom-seguro.pipe';
     MatButtonModule,
     MatListModule,
     FormsModule,
-    MatChipsModule
+    ReactiveFormsModule,
+    MatChipsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

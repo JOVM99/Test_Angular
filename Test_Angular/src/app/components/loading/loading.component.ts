@@ -1,3 +1,4 @@
+//Componente para ícono de carga
 import { Component } from '@angular/core';
 
 @Component({

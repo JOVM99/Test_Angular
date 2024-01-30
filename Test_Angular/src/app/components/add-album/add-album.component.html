@@ -1,0 +1,23 @@
+<h1>Add Album</h1>
+<hr />
+<div class="container">
+  <form class="form" [formGroup]="forma" (ngSubmit)="save()">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput  formControlName="name"/>
+      <small color="warn" *ngIf="invalidName">Ingrese al menos 4 letras</small>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Year</mat-label>
+      <input matInput type="text" formControlName="year" />
+      <small color="warn" *ngIf="invalidYear">Ingrese 4 números</small>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Image URL</mat-label>
+      <input matInput formControlName="url" />
+      <small color="warn" *ngIf="invalidURL">Ingrese una URL </small>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Add</button>
+    <button mat-raised-button color="warn" (click)="cancel()" >Cancel</button>
+  </form>
+</div>

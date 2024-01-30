@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class ArtistComponent implements AfterViewInit {
   artists: any = [];
+  //Disposición de la columnas
   displayedColumns: string[] = ['image','name', 'popularity', 'view'];
   dataSource = new MatTableDataSource<Artists>(this.artists);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -20,6 +21,8 @@ export class ArtistComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
+
+  //función para aplicar el filtro una vez el usuario hace su petición, realiza la búsqueda en la api de Spotify.
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.spotify.getArtistas(filterValue).subscribe((resp) => {
@@ -36,6 +39,7 @@ export class ArtistComponent implements AfterViewInit {
   }
 }
 
+//Interfaz para el artista
 export interface Artists {
   image:[];
   name: string;

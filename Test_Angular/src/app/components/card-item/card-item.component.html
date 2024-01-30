@@ -1,9 +1,9 @@
 <mat-card class="example-card">
   <mat-card-header>
-   <div mat-card-avatar class="example-header-image"  [style.background-image]="'url(' + (items.images[2].url | noimage) +')'"></div>
+   <div mat-card-avatar class="example-header-image"  [style.background-image]="'url(' + (items.images[0].url | noimage) +')'"></div>
     <mat-card-title>{{items.name}}</mat-card-title>
   </mat-card-header>
-  <img mat-card-image [src]="items.images[0].url | noimage" alt="Photo">
+  <img mat-card-image [src]="items.images[0].url | noimage" alt="Photo" style="height: 490px;">
   <mat-card-content style="margin-top: 10px;">
     <mat-chip-set class="example-chip">
       <mat-chip class="example-box"

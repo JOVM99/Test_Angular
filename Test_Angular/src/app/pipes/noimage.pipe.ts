@@ -1,3 +1,4 @@
+//Pipe para colocar una imagen en caso de que no venga en la Api
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
