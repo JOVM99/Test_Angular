@@ -36,7 +36,7 @@ export class AddAlbumComponent {
         [
           Validators.required,
           Validators.pattern(
-            '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?'
+            '^https?://[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}(?:/[^/\\s]*)*$'
           ),
         ],
       ],

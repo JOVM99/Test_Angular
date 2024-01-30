@@ -3,7 +3,7 @@
    <div mat-card-avatar class="example-header-image"  [style.background-image]="'url(' + (items.images[0].url | noimage) +')'"></div>
     <mat-card-title>{{items.name}}</mat-card-title>
   </mat-card-header>
-  <img mat-card-image [src]="items.images[0].url | noimage" alt="Photo" style="height: 490px;">
+  <img mat-card-image [src]="items.images[0].url | noimage" alt="Photo" class="image">
   <mat-card-content style="margin-top: 10px;">
     <mat-chip-set class="example-chip">
       <mat-chip class="example-box"
